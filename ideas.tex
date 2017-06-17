@@ -1,0 +1,107 @@
+%%%%% Document Setup %%%%%%%%
+
+\documentclass[12pt, onecolumn]{revtex4}    % Font size (10,11 or 12pt) and column number (one or two).
+
+\usepackage{times}                          % Times New Roman font type
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm,
+ top=1.85cm, bottom=1.85cm]{geometry}       % Defines paper size and margin length
+
+\usepackage[font=small,
+labelfont=bf]{caption}                      % Defines caption font size as 9pt and caption title bolded
+
+
+\usepackage{graphics,graphicx,epsfig,ulem}	% Makes sure all graphics works
+\usepackage{amsmath,amssymb}						% Adds mathematical features for equations
+\usepackage{mathtools}
+\usepackage{etoolbox} 
+\usepackage{xcolor}   
+%\usepackage{xcolor,colortbl}
+%\definecolor{green}{rgb}{0.1,0.1,0.1}
+%\newcommand{\done}{\cellcolor{teal}done}  %{0.9}
+%\newcommand{\hcyan}[1]{{\color{teal} #1}}                   % Customise date to preferred format
+\makeatletter
+\patchcmd{\frontmatter@RRAP@format}{(}{}{}{}
+\patchcmd{\frontmatter@RRAP@format}{)}{}{}{}
+\renewcommand\Dated@name{}
+\makeatother
+
+\usepackage{subfig}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}                           % Insert header
+\renewcommand{\headrulewidth}{0.3pt}
+\lhead{A. Cooper Stickland}                          % Your name
+\rhead{Drug Discovery Computational Tool Development}            % Your report title               
+
+\def\bibsection{\section*{References}}        % Position refernce section correctly
+
+
+%%%%% Document %%%%%
+\begin{document}                     
+\begin{titlepage}
+	\begin{center}
+		\vspace*{1cm}
+		
+		\huge \textbf{Machine Learning Ideas}
+		
+		\vspace{0.5cm}
+
+		
+		\vspace{1.5cm}
+		
+		\textbf{Asa Cooper Stickland} \\
+		
+		
+		\vfill
+		
+		
+		
+		\vspace{0.8cm}
+		
+		\includegraphics[width=0.4\textwidth]{Durham-University-logo-transparent.png}
+		
+		School of Informatics\\
+		Edinburgh University\\
+		Submitted: \today{}
+		
+	\end{center}
+\end{titlepage}
+
+
+\hrulefill
+\begin{abstract}              
+ 
+\textbf{Abstract} Document outlining ideas for what to learn next. 
+
+\end{abstract}
+
+
+
+\maketitle
+\thispagestyle{plain} % produces page number for front page
+\newpage
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{MCMC} 
+
+\subsection{Stochastic Gradient HMC}
+
+https://arxiv.org/pdf/1402.4102.pdf (Stochastic Gradient Hamiltonian Monte Carlo
+) is the OG paper for this. 
+
+http://www.birs.ca/events/2014/5-day-workshops/14w5125/videos/watch/201403041629-Fox.html this is a video that gives a good overview. 15:14 in the video outlines a proof that adding a friction term to the Hamiltonian dynamics keeps the posterior invariant, mentions the Fokker-Planck equation, looks interesting. 
+
+
+\begin{thebibliography}{}
+\bibitem{arnott} Arnott JA, Planey SL: The influence of lipophilicity in drug discovery and design. Expert opinion on drug discovery 2012; 7(10): 863-75.
+
+
+
+
+\end{thebibliography} 
+
+
+\end{document}
